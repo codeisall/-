@@ -6,12 +6,9 @@ import jieba
 def read(file, sheet_index=0):
     workbook = xlrd.open_workbook(file)
     sheet = workbook.sheet_by_index(sheet_index)
-    #cell = sheet.cell(1,6).value
-    #print(cell)
-    #print("---------")
-    #return cell
-    for i in range(1,1115):
-        cell_value = sheet.cell(i,6).value
+    #读取excel数据
+    for i in range(1,x):    #x为excel行数
+        cell_value = sheet.cell(i,y).value  #y为要读取数据的列数
         out = seg_sentence(cell_value)
         print(keywords(out))
 
@@ -40,4 +37,5 @@ def keywords(outstr):
 
 
 if __name__ == '__main__':
-    read('java.xlsx')
+    filename="name"     #文档路径
+    read(filename)
